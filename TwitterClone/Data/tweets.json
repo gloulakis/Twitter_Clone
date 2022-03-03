@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "username": "@rowan_xdxd",
+        "nickname": "Philip Rowan",
+        "created": "1d",
+        "message": "The toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods.",
+        "message_image": null,
+        "replies": 15,
+        "retweets": 63,
+        "favorited": 106,
+        "avatar_image": "avatar"
+    },
+    {
+        "id": 2,
+        "username": "@olive_branch",
+        "nickname": "Adele Hayley",
+        "created": "2d",
+        "message": "My dog is the cutest!",
+        "message_image": "sharedImage",
+        "replies": 33,
+        "retweets": 134,
+        "favorited": 400,
+        "avatar_image": "avatar_2"
+    },
+    {
+        "id": 3,
+        "username": "@harmony",
+        "nickname": "Aimee Harmony",
+        "created": "3d",
+        "message": "Nam venenatis erat auctor nostra quam nunc tellus fusce, sociosqu et sapien placerat adipiscing egestas porta suscipit, habitasse nibh habitant semper sit tempor per lectus sodales praesent curae quis.",
+        "message_image": null,
+        "replies": 15,
+        "retweets": 63,
+        "favorited": 106,
+        "avatar_image": "avatar_3"
+    },
+    {
+        "id": 4,
+        "username": "@harmony",
+        "nickname": "Aimee Harmony",
+        "created": "23/06/2019",
+        "message": "Umami slow-carb unicorn narwhal tousled, you probably haven't heard of them lyft irony mlkshk vexillologist. ",
+        "message_image": "image",
+        "replies": 33,
+        "retweets": 134,
+        "favorited": 400,
+        "avatar_image": "avatar_3"
+    }
+]
