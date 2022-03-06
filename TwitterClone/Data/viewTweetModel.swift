@@ -29,26 +29,8 @@ class viewTweetModel:ObservableObject{
         }
     }
     
-    func writeJSON(message:String) {
-        
-        let tweet = tweetsData(
-            id: Int.random(in: 100...10000),
-            username:"@Gloulakis",
-            nickname:"George Loulakis",
-            created: DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short),
-            message:message,
-            message_image:nil,
-            replies:Int.random(in: 10...2000),
-            retweets:Int.random(in: 5...100),
-            favorited:Int.random(in: 50...200),
-            avatar_image:""
-        )
-           let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-           let jsonURL = documentDirectory
-               .appendingPathComponent("tweets")
-               .appendingPathExtension("json")
-           try? JSONEncoder().encode(tweet).write(to: jsonURL, options: .atomic)
-       }
+
+  
     
     func addTweet(message:String){
         
@@ -69,7 +51,7 @@ class viewTweetModel:ObservableObject{
     }
     
     
-    func json(message:String){
+  /*  func json(message:String){
         
         let tweet = tweetsData(
             id: Int.random(in: 100...10000),
@@ -105,7 +87,28 @@ class viewTweetModel:ObservableObject{
             return nil
         }
         return String(data: data, encoding: String.Encoding.utf8)*/
-    }
+    }*/
+    
+ /*  func writeJSON(message:String) {
+        
+        let tweet = tweetsData(
+            id: Int.random(in: 100...10000),
+            username:"@Gloulakis",
+            nickname:"George Loulakis",
+            created: DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short),
+            message:message,
+            message_image:nil,
+            replies:Int.random(in: 10...2000),
+            retweets:Int.random(in: 5...100),
+            favorited:Int.random(in: 50...200),
+            avatar_image:""
+        )
+            let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let jsonURL = documentDirectory
+                .appendingPathComponent("tweets")
+                .appendingPathExtension("json")
+            try? JSONEncoder().encode(tweet).write(to: jsonURL, options: .atomic)
+        } */
     
 }
 

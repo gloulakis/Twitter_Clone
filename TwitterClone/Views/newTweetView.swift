@@ -10,7 +10,8 @@ import SwiftUI
 struct newTweetView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @State private var fullText: String = ""
+    @Binding var fullText: String
+    @State var tweetMessage:String = ""
     @StateObject private var viewModel = viewTweetModel()
     
     var body: some View {
@@ -27,7 +28,7 @@ struct newTweetView: View {
                 }
                 Spacer()
                 Button{
-                    addNewTweet()
+                    fullText = tweetMessage
                 } label : {
                     Text("Tweet")
                         .padding(.horizontal)
@@ -44,7 +45,7 @@ struct newTweetView: View {
                         .font(.headline)
                         .padding()
                     
-                    TextEditor(text: $fullText)
+                    TextEditor(text: $tweetMessage)
                         .foregroundColor(Color.gray)
                         .font(.custom("HelveticaNeue", size: 13))
                         .lineSpacing(5)
@@ -59,7 +60,8 @@ struct newTweetView: View {
 }
 
 struct newTweetView_Previews: PreviewProvider {
+    @State static private var message = ""
     static var previews: some View {
-        newTweetView()
+        newTweetView(fullText: $message)
     }
 }

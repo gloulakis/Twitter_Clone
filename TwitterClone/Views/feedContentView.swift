@@ -11,6 +11,7 @@ struct feedContentView: View {
     
     @StateObject private var viewModel = viewTweetModel()
     @State private var newTweetView = false
+    @State private var newMessage = ""
     
     var body: some View {
         ZStack(alignment: .bottomTrailing){
@@ -34,6 +35,7 @@ struct feedContentView: View {
         .listRowInsets(EdgeInsets())
         .onAppear {
             viewModel.fechTweets()
+            addNewTweet()
         }
             Button{
                 newTweetView.toggle()
@@ -41,8 +43,13 @@ struct feedContentView: View {
                 Image("newTweet")
             }
             .fullScreenCover(isPresented: $newTweetView) {
-                TwitterClone.newTweetView()
+                TwitterClone.newTweetView(fullText: $newMessage)
             }
+        }
+    }
+    func addNewTweet (){
+        if newMessage.isEmpty == false {
+            viewModel.addTweet(message: newMessage)
         }
     }
 }

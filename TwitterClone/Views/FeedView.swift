@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct FeedView: View {
-    
-    @State private var tweetmessage = ""
-    @State private var message = ""
-    
     var body: some View {
         NavigationView{
             ZStack(alignment: .bottomTrailing){
@@ -30,11 +26,6 @@ struct FeedView: View {
                             }
                         }
                     }
-               /* HStack{
-                    NavigationLink(destination: newTweetView() ) {
-                        Image("newTweet")
-                    }
-                } */
             }
         }  
     }
