@@ -44,7 +44,7 @@ class viewTweetModel:ObservableObject{
             replies:Int.random(in: 10...2000),
             retweets:Int.random(in: 5...100),
             favorited:Int.random(in: 50...200),
-            avatar_image:""
+            avatar_image:"avatar_G"
         )
         
         tweets.append(tweet)

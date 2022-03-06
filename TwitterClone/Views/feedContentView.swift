@@ -30,12 +30,17 @@ struct feedContentView: View {
                 )
             }
         }
+        .refreshable {
+            if newMessage.isEmpty == false {
+                addNewTweet()
+            }
+        }
         .listStyle(.plain)
         .buttonStyle(PlainButtonStyle())
         .listRowInsets(EdgeInsets())
         .onAppear {
             viewModel.fechTweets()
-            addNewTweet()
+           
         }
             Button{
                 newTweetView.toggle()
@@ -51,6 +56,7 @@ struct feedContentView: View {
         if newMessage.isEmpty == false {
             viewModel.addTweet(message: newMessage)
         }
+        newMessage = ""
     }
 }
 

@@ -14,6 +14,8 @@ struct newTweetView: View {
     @State var tweetMessage:String = ""
     @StateObject private var viewModel = viewTweetModel()
     
+    
+    
     var body: some View {
         VStack{
             HStack{
@@ -29,6 +31,10 @@ struct newTweetView: View {
                 Spacer()
                 Button{
                     fullText = tweetMessage
+                    if fullText.isEmpty == false {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                    
                 } label : {
                     Text("Tweet")
                         .padding(.horizontal)
@@ -52,10 +58,6 @@ struct newTweetView: View {
                 }
             }
         }
-    }
-    
-    func addNewTweet(){
-        viewModel.addTweet(message: "test")
     }
 }
 
