@@ -34,11 +34,22 @@ class viewTweetModel:ObservableObject{
     
     func addTweet(message:String){
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "dd/MM/YYYY"
+ 
+        //let date = Date()
+       
+        
+        
+        
+        
         let tweet = tweetsData(
             id: Int.random(in: 100...10000),
             username:"@Gloulakis",
             nickname:"George Loulakis",
-            created: DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short),
+            created: "Now",  //dateFormatter.string(from: date),
             message:message,
             message_image:nil,
             replies:Int.random(in: 10...2000),

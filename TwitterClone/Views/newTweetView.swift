@@ -53,7 +53,7 @@ struct newTweetView: View {
                     
                     TextEditor(text: $tweetMessage)
                         .foregroundColor(Color.gray)
-                        .font(.custom("HelveticaNeue", size: 13))
+                        .font(.custom("Chalkboard SE", size: 16))
                         .lineSpacing(5)
                 }
             }

@@ -30,17 +30,17 @@ struct TweetRowView: View {
                 Image(avatar_image)
                 Spacer()
                     .frame(width: 5)
-                VStack(alignment: .leading,spacing: 4){
+                VStack(alignment: .leading,spacing: 5){
                     HStack{
                         VStack{
                             Text(nickname)
                                 .bold()
-                                .font(.system(size:17))
+                                .font(.system(size:16))
                                 
                         }.lineLimit(1)
                         
                         Text(username)
-                            .font(.system(size:17))
+                            .font(.system(size:16))
                             .foregroundColor(.gray)
                             .lineLimit(1)
                         VStack{
@@ -53,7 +53,7 @@ struct TweetRowView: View {
                             Spacer()
                         }.frame( height: 19)
                         Text("\(created)")
-                            .font(.system(size:17))
+                            .font(.system(size:16))
                             .foregroundColor(.gray)
                             .lineLimit(1)
                         Spacer()
@@ -61,9 +61,9 @@ struct TweetRowView: View {
                     }
                     VStack{
                         Text(message)
-                            .font(.system(size:15))
+                            .font(.system(size:16))
                             .multilineTextAlignment(.leading)
-                            .lineLimit(10)
+                            .lineLimit(6)
                     }.padding(EdgeInsets(top: 0, leading: 1, bottom: 0, trailing: 9))
                     VStack{
                         if  message_image.isEmpty == false {
