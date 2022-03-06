@@ -1,76 +1,65 @@
 //
-//  newTweetView.swift
+//  newTweetView2.swift
 //  TwitterClone
 //
-//  Created by Georgios Loulakis on 3.03.22.
+//  Created by Georgios Loulakis on 6.03.22.
 //
 
 import SwiftUI
 
 struct newTweetView: View {
     
-    @StateObject private var viewModel = viewTweetModel()
+    @Environment(\.presentationMode) var presentationMode
     @State private var fullText: String = ""
-    
-    let test = feedContentView()
-    
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    var btnTweet : some View {
-        HStack{
-            Button{
-                newTweet(mess: "test")
-            } label: {
-                Text("Tweet")
-                    .font(.system(size:12))
-            }
-            .padding(.trailing)
-            .padding(.leading)
-            .background(Color.blue)
-            .cornerRadius(15)
-            .foregroundColor(.white)
-        }
-        
-    }
-    
-    var btnBack : some View {
-        Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
-            HStack{
-                Image ("chevron.backward")
-                    .renderingMode(.template)
-                    .foregroundColor(.blue)
-                Text("Home")
-                    .foregroundColor(.blue)
-            }
-        }
-    }
+    @StateObject private var viewModel = viewTweetModel()
     
     var body: some View {
         VStack{
-            Text("Enter your tweet below.")
-                .font(.headline)
-            
-            TextEditor(text: $fullText)
-                .foregroundColor(Color.gray)
-                .font(.custom("HelveticaNeue", size: 13))
-                .lineSpacing(5)
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading: btnBack,trailing: btnTweet)
-            
+            HStack{
+                Button{
+                    self.presentationMode.wrappedValue.dismiss()
+                } label : {
+                    Image (systemName: "chevron.backward")
+                        .renderingMode(.template)
+                        .foregroundColor(.blue)
+                    Text("Home")
+                        .foregroundColor(Color(.systemBlue))
+                }
+                Spacer()
+                Button{
+                    addNewTweet()
+                } label : {
+                    Text("Tweet")
+                        .padding(.horizontal)
+                        .padding(.vertical, 8)
+                        .background(Color(.systemBlue))
+                        .foregroundColor(Color(.white))
+                        .clipShape(Capsule())
+                }
+            }
+            .padding()
+            HStack{
+                VStack{
+                    Text("Enter your tweet below.")
+                        .font(.headline)
+                        .padding()
+                    
+                    TextEditor(text: $fullText)
+                        .foregroundColor(Color.gray)
+                        .font(.custom("HelveticaNeue", size: 13))
+                        .lineSpacing(5)
+                }
+            }
         }
     }
     
-    func newTweet (mess:String){
-        viewModel.json(message: mess)
+    func addNewTweet(){
+        viewModel.addTweet(message: "test")
     }
 }
 
-
-
 struct newTweetView_Previews: PreviewProvider {
     static var previews: some View {
-        
         newTweetView()
-        
     }
 }

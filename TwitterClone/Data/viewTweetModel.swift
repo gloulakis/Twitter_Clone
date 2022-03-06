@@ -92,6 +92,8 @@ class viewTweetModel:ObservableObject{
             let jsonData = try JSONEncoder().encode(tweet)
             let jsonString = String(data: jsonData, encoding: .utf8)!
             print(jsonData)
+        
+            
             
             let decodedSentences = try JSONDecoder().decode([tweetsData].self, from: jsonData)
             print(decodedSentences)

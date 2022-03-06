@@ -10,8 +10,10 @@ import SwiftUI
 struct feedContentView: View {
     
     @StateObject private var viewModel = viewTweetModel()
+    @State private var newTweetView = false
     
     var body: some View {
+        ZStack(alignment: .bottomTrailing){
         List{
             ForEach(viewModel.tweets, id: \.id){ tweet in
                 TweetRowView (
@@ -32,6 +34,15 @@ struct feedContentView: View {
         .listRowInsets(EdgeInsets())
         .onAppear {
             viewModel.fechTweets()
+        }
+            Button{
+                newTweetView.toggle()
+            } label:{
+                Image("newTweet")
+            }
+            .fullScreenCover(isPresented: $newTweetView) {
+                TwitterClone.newTweetView()
+            }
         }
     }
 }

@@ -30,11 +30,11 @@ struct FeedView: View {
                             }
                         }
                     }
-                HStack{
+               /* HStack{
                     NavigationLink(destination: newTweetView() ) {
                         Image("newTweet")
                     }
-                }
+                } */
             }
         }  
     }

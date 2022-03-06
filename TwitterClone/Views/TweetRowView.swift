@@ -30,20 +30,32 @@ struct TweetRowView: View {
                 Image(avatar_image)
                 Spacer()
                     .frame(width: 5)
-                VStack(alignment: .leading){
+                VStack(alignment: .leading,spacing: 4){
                     HStack{
-                        Text(nickname)
-                            .bold()
-                            .font(.system(size:17))
-                            .lineLimit(nil)
+                        VStack{
+                            Text(nickname)
+                                .bold()
+                                .font(.system(size:17))
+                                
+                        }.lineLimit(1)
+                        
                         Text(username)
                             .font(.system(size:17))
                             .foregroundColor(.gray)
                             .lineLimit(1)
+                        VStack{
+                            Spacer()
+                            Text(".")
+                                .bold()
+                                .foregroundColor(.gray)
+                            
+                            Spacer()
+                            Spacer()
+                        }.frame( height: 19)
                         Text("\(created)")
                             .font(.system(size:17))
                             .foregroundColor(.gray)
-                            .lineLimit(0)
+                            .lineLimit(1)
                         Spacer()
                         Image("more")
                     }
