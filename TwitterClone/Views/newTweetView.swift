@@ -55,7 +55,8 @@ struct newTweetView: View {
                         .foregroundColor(Color.gray)
                         .font(.custom("Chalkboard SE", size: 16))
                         .lineSpacing(5)
-                }
+                        
+                }.padding(.horizontal,10)
             }
         }
     }

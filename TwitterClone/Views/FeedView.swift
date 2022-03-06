@@ -16,7 +16,9 @@ struct FeedView: View {
                     .navigationTitle("Home")
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
-                            Image("oval")
+                            Image("avatar_G")
+                                .resizable()
+                                .frame(width: 40 , height: 40)
                         }
                         ToolbarItemGroup() {
                             Button {
@@ -34,6 +36,6 @@ struct FeedView: View {
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
         FeedView()
-.previewInterfaceOrientation(.landscapeRight)
+.previewInterfaceOrientation(.portrait)
     }
 }
