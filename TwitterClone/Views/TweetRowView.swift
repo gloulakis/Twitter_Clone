@@ -26,39 +26,41 @@ struct TweetRowView: View {
     
     var body: some View {
         VStack{
-            Spacer()
-                .frame(height: 30)
             HStack(alignment: .top){
                 Image(avatar_image)
                 Spacer()
                     .frame(width: 5)
-                    VStack(alignment: .leading){
+                VStack(alignment: .leading){
                     HStack{
                         Text(nickname)
                             .bold()
                             .font(.system(size:17))
+                            .lineLimit(nil)
                         Text(username)
                             .font(.system(size:17))
                             .foregroundColor(.gray)
-                            .lineLimit(0)
+                            .lineLimit(1)
                         Text("\(created)")
                             .font(.system(size:17))
                             .foregroundColor(.gray)
+                            .lineLimit(0)
                         Spacer()
                         Image("more")
                     }
+                    VStack{
                         Text(message)
                             .font(.system(size:15))
                             .multilineTextAlignment(.leading)
+                            .lineLimit(10)
+                    }.padding(EdgeInsets(top: 0, leading: 1, bottom: 0, trailing: 9))
                     VStack{
-                        if  message_image == "" {
-                            
-                        } else {
+                        if  message_image.isEmpty == false {
                             Image(message_image)
                                 .resizable()
-                                .frame(width: 334)                           .scaledToFit()
+                                .frame(width: 334)
+                                .scaledToFit()
                                 .cornerRadius(20)
-                        }
+                        } 
                     }.frame(width:330)
                     
                     Spacer()
@@ -125,18 +127,9 @@ struct TweetRowView: View {
                     }
                     .foregroundColor(.gray)
                     .font(.system(size: 13))
-                    }
+                }
             }
-            Spacer()
-                .frame(height:23)
-            Divider()
-                .frame(width: 370)
-        }.padding(.horizontal)
-        
-    }
-    
-    
-    func changeColor(){
+        }.padding(.top)
         
     }
 }
@@ -154,7 +147,7 @@ struct TweetRowView_Previews: PreviewProvider {
             retweets: 63,
             favorited: 106
         )
-.previewInterfaceOrientation(.portrait)
+            .previewInterfaceOrientation(.portrait)
     }
 }
 

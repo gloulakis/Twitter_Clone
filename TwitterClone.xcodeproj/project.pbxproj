@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CC23F95327D0AE5B00CF16BA /* newTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23F95227D0AE5B00CF16BA /* newTweetView.swift */; };
-		CC23F95627D0C2F500CF16BA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23F95527D0C2F500CF16BA /* ButtonView.swift */; };
 		CC5C47C927CEAB84007C77CD /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5C47C827CEAB84007C77CD /* FeedView.swift */; };
 		CCEBD9B927CD4E9E00F754C2 /* TwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBD9B827CD4E9E00F754C2 /* TwitterCloneApp.swift */; };
 		CCEBD9BB27CD4E9E00F754C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBD9BA27CD4E9E00F754C2 /* ContentView.swift */; };
@@ -23,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		CC23F95227D0AE5B00CF16BA /* newTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTweetView.swift; sourceTree = "<group>"; };
-		CC23F95527D0C2F500CF16BA /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		CC5C47C827CEAB84007C77CD /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		CCEBD9B527CD4E9E00F754C2 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEBD9B827CD4E9E00F754C2 /* TwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneApp.swift; sourceTree = "<group>"; };
@@ -52,9 +50,8 @@
 			isa = PBXGroup;
 			children = (
 				CCEBD9D127CD624500F754C2 /* TweetRowView.swift */,
-				CCEBD9CD27CD5AB600F754C2 /* feedContentView.swift */,
 				CC5C47C827CEAB84007C77CD /* FeedView.swift */,
-				CC23F95527D0C2F500CF16BA /* ButtonView.swift */,
+				CCEBD9CD27CD5AB600F754C2 /* feedContentView.swift */,
 				CC23F95227D0AE5B00CF16BA /* newTweetView.swift */,
 			);
 			path = Views;
@@ -186,7 +183,6 @@
 				CCEBD9B927CD4E9E00F754C2 /* TwitterCloneApp.swift in Sources */,
 				CCEBD9CE27CD5AB600F754C2 /* feedContentView.swift in Sources */,
 				CCEBD9D227CD624500F754C2 /* TweetRowView.swift in Sources */,
-				CC23F95627D0C2F500CF16BA /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

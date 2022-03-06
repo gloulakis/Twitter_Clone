@@ -8,39 +8,40 @@
 import SwiftUI
 
 struct FeedView: View {
+    
+    @State private var tweetmessage = ""
+    @State private var message = ""
+    
     var body: some View {
-            NavigationView{
-                ZStack(alignment: .bottomTrailing){
-                    feedContentView()
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationTitle("Home")
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarLeading) {
-                                Image("oval")
-                            }
-                            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                                Button {
-                                    // do nothing
-                                } label: {
-                                    Image("iconSparkle")
-                                }
-                                
+        NavigationView{
+            ZStack(alignment: .bottomTrailing){
+                feedContentView()
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle("Home")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Image("oval")
+                        }
+                        ToolbarItemGroup() {
+                            Button {
+                                // do nothing
+                            } label: {
+                                Image("iconSparkle")
                             }
                         }
-                    HStack{
-                        NavigationLink(destination: newTweetView()) {
-                            ButtonView()
-                        }
-                        .navigationBarTitle(Text("Enter your tweet below"))
                     }
-                   
+                HStack{
+                    NavigationLink(destination: newTweetView() ) {
+                        Image("newTweet")
                     }
+                }
             }
+        }  
     }
 }
 
-    struct FeedView_Previews: PreviewProvider {
-        static var previews: some View {
-            FeedView()
-        }
+struct FeedView_Previews: PreviewProvider {
+    static var previews: some View {
+        FeedView()
     }
+}
